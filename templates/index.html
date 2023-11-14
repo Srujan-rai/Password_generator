@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form method="post" action="/">
+        <label for="password_length">Password Length:</label>
+        <input type="text" id="password_length" name="password_length" required>
+        <button type="submit">Generate Password</button>
+    </form>
+
+    {% if password %}
+        <h2>Generated Password:</h2>
+        <p id="generated_password">{{ password }}</p>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    {% endif %}
+
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <script>
+        function copyToClipboard() {
+            var passwordField = document.getElementById("generated_password");
+            var range = document.createRange();
+            range.selectNode(passwordField);
+            window.getSelection().removeAllRanges(); // Clear previous selection
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges(); // Clear selection after copy
+            alert("Password copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
