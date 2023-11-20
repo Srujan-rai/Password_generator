@@ -20,8 +20,9 @@ To run this application locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Ensure you have Python installed.
 3. Install the required dependencies using `pip install -r requirements.txt`.
-4. Run the application using `python app.py`.
-5. Access the web app through your browser at `http://localhost:5000`.
+4. in terminal put `python app.py`.
+5. Run the application using `python app.py`.
+6. Access the web app through your browser at `http://localhost:5000`.
 
 ## Usage
 
